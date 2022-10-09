@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         
-        if (currentNumber.count < maxNumberCount) {
+        if (currentNumber.count <= maxNumberCount) {
             currentNumber+="\(sender.tag)"
             outPutLabel.text = currentNumber
         }
@@ -57,8 +57,6 @@ class ViewController: UIViewController {
         currentNumber.removeLast()
         outPutLabel.text = currentNumber
     }
-    
-    
     @IBAction func devisionButtonPressed(_ sender: UIButton) {
         witchOperation(.devision)
     }
@@ -71,15 +69,15 @@ class ViewController: UIViewController {
     @IBAction func plusButtonPressed(_ sender: UIButton) {
         witchOperation(.plus)
     }
-    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        secondNumber = currentNumber
         result = calculate(operation)
         outPutLabel.text = result
-        resetAll()
+        operation = .NULL
+        currentNumber = result
     }
     
     func calculate(_ operation: Operations) -> String {
+        secondNumber = currentNumber
         if let f = Double(firstNumber) , let s = Double(secondNumber)  {
             if (operation == .plus) {
                 result = "\(f + s)"
