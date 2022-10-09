@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         case devision = "/"
         case multiply = "X"
         case NULL = "NULL"
+        case equally = "="
     }
 
     var currentNumber:String = ""
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
+        
         if (currentNumber.count < maxNumberCount) {
             currentNumber+="\(sender.tag)"
             outPutLabel.text = currentNumber
@@ -45,11 +47,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func clearButtonPressed(_ sender: UIButton) {
-        currentNumber = ""
-        firstNumber = ""
-        secondNumber = ""
-        operation = .NULL
-        result = ""
+        resetAll()
         outPutLabel.text = currentNumber
     }
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
@@ -59,19 +57,59 @@ class ViewController: UIViewController {
         currentNumber.removeLast()
         outPutLabel.text = currentNumber
     }
+    
+    
     @IBAction func devisionButtonPressed(_ sender: UIButton) {
+        witchOperation(.devision)
     }
     @IBAction func multiplyButtonPressed(_ sender: UIButton) {
+        witchOperation(.multiply)
     }
     @IBAction func minusButtonPressed(_ sender: UIButton) {
+        witchOperation(.minus)
     }
     @IBAction func plusButtonPressed(_ sender: UIButton) {
-    }
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        witchOperation(.plus)
     }
     
-    func witchOperation(_ operation: Operation) {
-        
+    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        secondNumber = currentNumber
+        result = calculate(operation)
+        outPutLabel.text = result
+        resetAll()
+    }
+    
+    func calculate(_ operation: Operations) -> String {
+        if let f = Double(firstNumber) , let s = Double(secondNumber)  {
+            if (operation == .plus) {
+                result = "\(f + s)"
+            } else if (operation == .minus) {
+                result = "\(f - s)"
+            } else if (operation == .devision) {
+                result = "\(f/s)"
+            } else if (operation == .multiply) {
+                result = "\(f*s)"
+            }
+        }
+        return result
+    }
+    
+    func resetAll() {
+        currentNumber = ""
+        firstNumber = ""
+        secondNumber = ""
+        operation = .NULL
+        result = ""
+    }
+    
+    func witchOperation(_ operationNew: Operations) {
+        if (!currentNumber.isEmpty || !firstNumber.isEmpty) {
+            if (operation == .NULL) {
+                firstNumber = currentNumber
+                currentNumber = ""
+            }
+            operation = operationNew
+        }
     }
 }
 
