@@ -76,6 +76,13 @@ class ViewController: UIViewController {
         currentNumber = result
     }
     
+    @IBAction func changeSignButton(_ sender: UIButton) {
+        if let number = Int(currentNumber) {
+            currentNumber = String(number * -1)
+        }
+        outPutLabel.text = currentNumber
+    }
+    
     func calculate(_ operation: Operations) -> String {
         secondNumber = currentNumber
         if let f = Double(firstNumber) , let s = Double(secondNumber)  {
