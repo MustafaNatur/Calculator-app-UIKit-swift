@@ -40,6 +40,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func zeroButtonPressed(_ sender: UIButton) {
+        if let number = Int(currentNumber) {
+            if (number != 0) {
+                currentNumber+="\(sender.tag)"
+                outPutLabel.text = currentNumber
+            }
+        } else {
+            currentNumber = "0"
+            outPutLabel.text = currentNumber
+        }
+    }
+    
     @IBAction func dotbuttonPressed(_ sender: UIButton) {
         if !currentNumber.contains(".") && !currentNumber.isEmpty {
             currentNumber+="."

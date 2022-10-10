@@ -257,7 +257,7 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EY9-4h-2ja"/>
+                                                    <action selector="zeroButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4cl-Sd-dQe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1h-ed-QJb">
