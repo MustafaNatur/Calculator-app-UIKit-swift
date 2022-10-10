@@ -1,4 +1,4 @@
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fpurple-icon-calculator--726909196113067140%2F&psig=AOvVaw02r0IkRymZ4sUDPHW5s6ld&ust=1665525029046000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNC-0q_S1voCFQAAAAAdAAAAABAL" align="left" hspace="1" vspace="1" height="150" width="150">
+<img src="https://raw.githubusercontent.com/MustafaNatur/Calculator-app-UIKit-swift/Develop/Calculator/Calculator/Assets.xcassets/AppIcon.appiconset/ed5296e5972730d5899e9cc06e588702-76%402x.png" align="left" hspace="1" vspace="1" height="150" width="150">
 
 # Calculator-app-UIKit-swift
 
