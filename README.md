@@ -10,13 +10,8 @@ PET project: calculator app UIKit swift
 ### Screenshots
 <table>
   <tr>
-    <td><img src="Screenshots/screen1Go.jpg" width="320"></td>
-    <td><img src="Screenshots/screen2Go.jpg" width="320"></td>
-  </tr>
-  <tr>
-    <td><img src="Screenshots/screen3Go.jpg" width="320"></td>
-    <td><img src="Screenshots/Screen5Go.jpg" width="320"></td>
-  </tr>
+    <td><img src="screenshots/main_1" width="320"></td>
+    <td><img src="screenshots/main_2" width="320"></td>
 </table>
 
 ### How it works:
