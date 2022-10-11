@@ -58,10 +58,12 @@ class ViewController: UIViewController {
             outPutLabel.text = currentNumber
         }
     }
+    
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         resetAll()
         outPutLabel.text = currentNumber
     }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         guard !currentNumber.isEmpty else {
             return
@@ -69,21 +71,26 @@ class ViewController: UIViewController {
         currentNumber.removeLast()
         outPutLabel.text = currentNumber
     }
+    
     @IBAction func devisionButtonPressed(_ sender: UIButton) {
         witchOperation(.devision)
     }
     @IBAction func multiplyButtonPressed(_ sender: UIButton) {
         witchOperation(.multiply)
     }
+    
     @IBAction func minusButtonPressed(_ sender: UIButton) {
         witchOperation(.minus)
     }
+    
     @IBAction func plusButtonPressed(_ sender: UIButton) {
         witchOperation(.plus)
     }
+    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         result = calculate(operation)
-        outPutLabel.text = result
+        let clearResult = cleanResult(result)
+        outPutLabel.text = clearResult
         operation = .NULL
         currentNumber = result
     }
@@ -109,6 +116,22 @@ class ViewController: UIViewController {
             }
         }
         return result
+    }
+    
+    func cleanResult(_ result:String) -> String {
+        var newResult = result
+        if (result[result.index(before: result.endIndex)] == "0") {
+            let index = result.firstIndex(of:".") ?? result.endIndex
+            newResult = String(result[..<index])
+        }
+        
+        if (result.count > 9) {
+            let miss = result.count - 9
+            let index = result.index(result.startIndex, offsetBy: 9)
+            newResult = String(result[..<index]) + "E\(miss)"
+        }
+        
+        return newResult
     }
     
     func resetAll() {
