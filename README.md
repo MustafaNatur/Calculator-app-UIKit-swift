@@ -13,35 +13,18 @@ PET project: calculator app UIKit swift
     <td><img src="screenshots/main_1.png" width="320"></td>
 </table>
 
-### How it works:
-- Open the app and spot any GO bike on the map.
-- Scan the code on that bike to unlock the bike. 
-- Take the bike anywhere, anytime.
-- Now that when you have reached your destination, just open the app, click the photo of the odometer and end your trip parking the bike at any location.
-
-### Why you will love it:
-- Pick anywhere and drop anywhere
-- Cheaper than a cab, auto, and even bus.
-- Faster than any other transportation medium
-- Your ride is just a QR code scan away
-
-### Features:
-- Smart locks to unlock the bike
-- Map view to spot the nearest bike
-- Approval of KYC through AI
-- Fueling the bike is the easiest job for anyone 
+### About it:
+- This is my first project on Swift.
+- It is usual calculator with default operations. 
+- In the project, I tried to keep track of all edge cases.
 
 ### Installation
 
 1. Clone the repo via git clone command.
 ```
-https://github.com/imjog/Wheelstreet-GO.git
+https://github.com/MustafaNatur/Calculator-app-UIKit-swift.git
 ```
-2. Run the following command to install all the third-party libraries.
-```
-pod install
-```
-3. Open in Xcode
+2. Open in Xcode
 ```
 open Wheelstreet.xcworkspace
 ```
