@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         case NULL = "NULL"
         case equally = "="
     }
+    
+    @IBAction func ToFirstViewController(_ segue: UIStoryboardSegue) {}
 
     var currentNumber:String = ""
     var firstNumber:String = ""
