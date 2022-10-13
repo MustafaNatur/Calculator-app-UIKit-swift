@@ -9,8 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var outPutLabel: UILabel!
-    
+    var color:UIColor = UIColor(red: 153/255, green: 128/255, blue: 255/255, alpha: 1)
     enum Operations:String {
         case plus = "+"
         case minus = "-"
@@ -20,7 +21,12 @@ class ViewController: UIViewController {
         case equally = "="
     }
     
-    @IBAction func ToFirstViewController(_ segue: UIStoryboardSegue) {}
+    @IBAction func ToFirstViewController(_ segue: UIStoryboardSegue) {
+        guard let sourceVC = segue.source as? SecondViewController else {
+            return
+        }
+        color = sourceVC.color
+    }
 
     var currentNumber:String = ""
     var firstNumber:String = ""
@@ -29,9 +35,12 @@ class ViewController: UIViewController {
     var result:String = ""
     var maxNumberCount = 9
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         outPutLabel.text = "0"
+        colorButton.backgroundColor = color
+        result = "0"
     }
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
@@ -151,6 +160,15 @@ class ViewController: UIViewController {
                 currentNumber = ""
             }
             operation = operationNew
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSecondScreen" {
+            if let secondVC = segue.destination as? SecondViewController {
+                secondVC.color = color
+            }
         }
     }
 }

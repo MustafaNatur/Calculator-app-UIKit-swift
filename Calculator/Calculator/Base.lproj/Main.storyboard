@@ -245,7 +245,7 @@
                                                     <attributedString key="attributedTitle"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="rFG-au-UYO" kind="show" identifier="Settings" id="P2Z-WP-P9o"/>
+                                                    <segue destination="rFG-au-UYO" kind="show" identifier="ShowSecondScreen" id="P2Z-WP-P9o"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbp-vu-Cej">
@@ -274,7 +274,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-OI-O42">
                                                 <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="99.333333333333329"/>
-                                                <color key="backgroundColor" red="0.59900071700000002" green="0.50247854219999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.59999999999999998" green="0.50247854219999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="=">
@@ -327,6 +327,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorButton" destination="Kre-OI-O42" id="ezd-dq-wOO"/>
                         <outlet property="outPutLabel" destination="KYg-0m-eCz" id="jkH-jN-lua"/>
                     </connections>
                 </viewController>
@@ -359,20 +360,26 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="duz-3H-XWe">
-                                <rect key="frame" x="40" y="120" width="282" height="486"/>
+                                <rect key="frame" x="40" y="120" width="334" height="486"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vBY-gh-0f1">
-                                        <rect key="frame" x="-2" y="0.0" width="286" height="122.66666666666667"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="vBY-gh-0f1">
+                                        <rect key="frame" x="-2" y="0.0" width="338" height="163"/>
+                                        <connections>
+                                            <action selector="SliderChange:" destination="rFG-au-UYO" eventType="valueChanged" id="3si-LH-dVX"/>
+                                        </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tdn-8j-Viv">
-                                        <rect key="frame" x="-2" y="121.66666666666666" width="286" height="122.33333333333334"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="tdn-8j-Viv">
+                                        <rect key="frame" x="-2" y="162" width="338" height="163"/>
+                                        <connections>
+                                            <action selector="SliderChange:" destination="rFG-au-UYO" eventType="valueChanged" id="mJ4-rt-Nqo"/>
+                                        </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="t1k-qc-cYq">
-                                        <rect key="frame" x="-2" y="242.99999999999997" width="286" height="122.66666666666666"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="t1k-qc-cYq">
+                                        <rect key="frame" x="-2" y="324" width="338" height="163"/>
+                                        <connections>
+                                            <action selector="SliderChange:" destination="rFG-au-UYO" eventType="valueChanged" id="sDU-Kv-uCN"/>
+                                        </connections>
                                     </slider>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQF-cp-An9">
-                                        <rect key="frame" x="0.0" y="364.66666666666669" width="284" height="121.33333333333331"/>
-                                    </switch>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-wT-xjL">
@@ -388,18 +395,26 @@
                         <viewLayoutGuide key="safeArea" id="hFf-n7-lLN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="duz-3H-XWe" firstAttribute="leading" secondItem="hFf-n7-lLN" secondAttribute="leading" constant="40" id="2Wv-c1-gj6"/>
+                            <constraint firstItem="duz-3H-XWe" firstAttribute="centerX" secondItem="dKa-dY-9V2" secondAttribute="centerX" id="3tr-zZ-BtQ"/>
                             <constraint firstItem="hFf-n7-lLN" firstAttribute="trailing" secondItem="cEI-hA-sHR" secondAttribute="trailing" constant="40" id="D47-S9-xDU"/>
                             <constraint firstItem="4hk-wT-xjL" firstAttribute="leading" secondItem="hFf-n7-lLN" secondAttribute="leading" constant="20" id="DJy-jK-9qh"/>
                             <constraint firstItem="4hk-wT-xjL" firstAttribute="top" secondItem="hFf-n7-lLN" secondAttribute="top" constant="20" id="QoN-Nx-Rsa"/>
                             <constraint firstItem="duz-3H-XWe" firstAttribute="top" secondItem="4hk-wT-xjL" secondAttribute="bottom" constant="20" id="VUX-SN-3RS"/>
                             <constraint firstItem="cEI-hA-sHR" firstAttribute="top" secondItem="duz-3H-XWe" secondAttribute="bottom" constant="20" id="XOs-tj-R6x"/>
+                            <constraint firstItem="duz-3H-XWe" firstAttribute="leading" secondItem="cEI-hA-sHR" secondAttribute="leading" id="Y1A-Ne-ZFy"/>
                             <constraint firstItem="cEI-hA-sHR" firstAttribute="leading" secondItem="hFf-n7-lLN" secondAttribute="leading" constant="40" id="Zrl-cD-qPC"/>
                             <constraint firstItem="hFf-n7-lLN" firstAttribute="bottom" secondItem="cEI-hA-sHR" secondAttribute="bottom" constant="40" id="dsH-XD-1pf"/>
+                            <constraint firstItem="duz-3H-XWe" firstAttribute="centerX" secondItem="dKa-dY-9V2" secondAttribute="centerX" id="frh-bs-NZD"/>
                             <constraint firstItem="4hk-wT-xjL" firstAttribute="trailing" secondItem="hFf-n7-lLN" secondAttribute="trailing" id="lau-tp-TNR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QZg-Hi-GKI"/>
+                    <connections>
+                        <outlet property="blueSliderValue" destination="t1k-qc-cYq" id="iVr-vJ-VKM"/>
+                        <outlet property="colorButton" destination="cEI-hA-sHR" id="lsJ-jQ-Xb8"/>
+                        <outlet property="greenSliderValue" destination="tdn-8j-Viv" id="gKs-SR-c9G"/>
+                        <outlet property="redSliderValue" destination="vBY-gh-0f1" id="9PT-6c-Tca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TH-fE-ApS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="aoZ-ru-g0h" userLabel="Exit" sceneMemberID="exit"/>
