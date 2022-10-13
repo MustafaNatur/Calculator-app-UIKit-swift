@@ -14,11 +14,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var greenSliderValue: UISlider!
     @IBOutlet weak var blueSliderValue: UISlider!
     
-    var color:UIColor = UIColor.darkGray
+    //var color:UIColor = UIColor.darkGray
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorButton.backgroundColor = color
     }
     
     
@@ -26,7 +25,7 @@ class SecondViewController: UIViewController {
         let red = CGFloat(redSliderValue.value/255)
         let green = CGFloat(greenSliderValue.value/255)
         let blue = CGFloat(blueSliderValue.value/255)
-        color = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
         colorButton.backgroundColor = color
     }
     

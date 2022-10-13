@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         guard let sourceVC = segue.source as? SecondViewController else {
             return
         }
-        color = sourceVC.color
+        colorButton.backgroundColor = sourceVC.colorButton.backgroundColor!
+        color = sourceVC.colorButton.backgroundColor!
     }
 
     var currentNumber:String = ""
@@ -173,7 +174,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSecondScreen" {
             if let secondVC = segue.destination as? SecondViewController {
-                secondVC.color = color
+                secondVC.colorButton.backgroundColor = color
             }
         }
     }
