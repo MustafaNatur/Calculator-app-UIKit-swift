@@ -39,12 +39,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         outPutLabel.text = "0"
-        colorButton.backgroundColor = color
-        result = "0"
+        
+       // colorButton.backgroundColor = color
+        
     }
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
-        
+        if (currentNumber == "0") {
+            currentNumber = ""
+        }
         if (currentNumber.count <= maxNumberCount) {
             currentNumber+="\(sender.tag)"
             outPutLabel.text = currentNumber
@@ -99,11 +102,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        result = calculate(operation)
-        let clearResult = cleanResult(result)
-        outPutLabel.text = clearResult
-        operation = .NULL
-        currentNumber = result
+        secondNumber = currentNumber
+        if (secondNumber.count != 0 && firstNumber.count != 0) {
+            result = calculate(operation)
+            let clearResult = cleanResult(result)
+            outPutLabel.text = clearResult
+            operation = .NULL
+            currentNumber = result
+        }
+
     }
     
     @IBAction func changeSignButton(_ sender: UIButton) {
@@ -114,7 +121,6 @@ class ViewController: UIViewController {
     }
     
     func calculate(_ operation: Operations) -> String {
-        secondNumber = currentNumber
         if let f = Double(firstNumber) , let s = Double(secondNumber)  {
             if (operation == .plus) {
                 result = "\(f + s)"
