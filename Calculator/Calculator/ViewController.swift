@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var outPutLabel: UILabel!
-    var color:UIColor = UIColor(red: 153/255, green: 128/255, blue: 255/255, alpha: 1)
     enum Operations:String {
         case plus = "+"
         case minus = "-"
@@ -26,7 +25,6 @@ class ViewController: UIViewController {
             return
         }
         colorButton.backgroundColor = sourceVC.colorButton.backgroundColor!
-        color = sourceVC.colorButton.backgroundColor!
     }
 
     var currentNumber:String = ""
@@ -40,9 +38,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         outPutLabel.text = "0"
-        
-       // colorButton.backgroundColor = color
-        
     }
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
@@ -174,7 +169,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSecondScreen" {
             if let secondVC = segue.destination as? SecondViewController {
-                secondVC.colorButton.backgroundColor = color
+                secondVC.newColor = colorButton.backgroundColor!
             }
         }
     }
