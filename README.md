@@ -14,7 +14,7 @@ PET project: calculator app UIKit swift
     <td><img src="screenshots/main_2.png" width="320"></td>
 </table>
 
-### About it:
+### About it
 - This is my first project on Swift.
 - It is usual calculator with default operations. 
 - In the project i tried to keep track of all edge cases.
@@ -34,5 +34,5 @@ https://github.com/MustafaNatur/Calculator-app-UIKit-swift.git
 ```
 2. Open in Xcode
 ```
-open Wheelstreet.xcworkspace
+open Calculator.xcodeproj
 ```
