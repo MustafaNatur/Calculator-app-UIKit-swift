@@ -11,6 +11,8 @@ PET project: calculator app UIKit swift
 <table>
   <tr>
     <td><img src="screenshots/main_1.png" width="320"></td>
+  <tr>
+    <td><img src="screenshots/main_2.png" width="320"></td>
 </table>
 
 ### About it:
