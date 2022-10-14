@@ -17,7 +17,14 @@ PET project: calculator app UIKit swift
 ### About it:
 - This is my first project on Swift.
 - It is usual calculator with default operations. 
-- In the project, I tried to keep track of all edge cases.
+- In the project i tried to keep track of all edge cases.
+
+### Functionality
+- simple mathimatical operations
+- changing the sign of the number by the button
+- deleting a number by one character
+- supports working with floating-point numbers
+- on the second screen you can customize color of calculator button (equally)
 
 ### Installation
 
