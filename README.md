@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/MustafaNatur/Calculator-app-UIKit-swift/Develop/Calculator/Calculator/Assets.xcassets/AppIcon.appiconset/ed5296e5972730d5899e9cc06e588702-76%402x.png" align="left" hspace="1" vspace="1" height="150" width="150">
 
-# Calculator-app-UIKit-swift
+# Calculator
 
 PET project: calculator app UIKit swift
 
