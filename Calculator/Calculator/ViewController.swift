@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
+        sender.dim()
         if (currentNumber == "0") {
             currentNumber = ""
         }
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zeroButtonPressed(_ sender: UIButton) {
+        sender.dim()
         if let number = Int(currentNumber) {
             if (number != 0) {
                 currentNumber+="\(sender.tag)"
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dotbuttonPressed(_ sender: UIButton) {
+        sender.dim()
         if !currentNumber.contains(".") && !currentNumber.isEmpty {
             currentNumber+="."
             outPutLabel.text = currentNumber
@@ -70,11 +73,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
+        sender.dim()
         resetAll()
         outPutLabel.text = currentNumber
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        sender.dim()
         guard !currentNumber.isEmpty else {
             return
         }
@@ -83,21 +88,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func devisionButtonPressed(_ sender: UIButton) {
+        sender.dim()
         witchOperation(.devision)
     }
     @IBAction func multiplyButtonPressed(_ sender: UIButton) {
+        sender.dim()
         witchOperation(.multiply)
     }
     
     @IBAction func minusButtonPressed(_ sender: UIButton) {
+        sender.dim()
         witchOperation(.minus)
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
+        sender.dim()
         witchOperation(.plus)
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        sender.dim()
         secondNumber = currentNumber
         if (secondNumber.count != 0 && firstNumber.count != 0) {
             result = calculate(operation)
@@ -110,6 +120,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeSignButton(_ sender: UIButton) {
+        sender.dim()
         if let number = Int(currentNumber) {
             currentNumber = String(number * -1)
         }

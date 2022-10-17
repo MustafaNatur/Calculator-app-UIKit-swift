@@ -15,6 +15,7 @@
 		9743118B28F054A100B72475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9743118928F054A100B72475 /* LaunchScreen.storyboard */; };
 		9743119928F07F5400B72475 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 9743119828F07F5400B72475 /* setting.png */; };
 		9743119B28F07FA700B72475 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 9743119A28F07FA700B72475 /* delete.png */; };
+		974879D328FDBBE800EA75C2 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974879D228FDBBE800EA75C2 /* UIButton+extension.swift */; };
 		97623C3028F7669D0051B8F0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97623C2F28F7669D0051B8F0 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		9743118C28F054A100B72475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9743119828F07F5400B72475 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		9743119A28F07FA700B72475 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		974879D228FDBBE800EA75C2 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		97623C2F28F7669D0051B8F0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				9743118028F054A000B72475 /* SceneDelegate.swift */,
 				9743118228F054A000B72475 /* ViewController.swift */,
 				97623C2F28F7669D0051B8F0 /* SecondViewController.swift */,
+				974879D228FDBBE800EA75C2 /* UIButton+extension.swift */,
 				9743118428F054A000B72475 /* Main.storyboard */,
 				9743118728F054A100B72475 /* Assets.xcassets */,
 				9743119828F07F5400B72475 /* setting.png */,
@@ -153,6 +156,7 @@
 				9743118328F054A000B72475 /* ViewController.swift in Sources */,
 				9743117F28F054A000B72475 /* AppDelegate.swift in Sources */,
 				9743118128F054A000B72475 /* SceneDelegate.swift in Sources */,
+				974879D328FDBBE800EA75C2 /* UIButton+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
